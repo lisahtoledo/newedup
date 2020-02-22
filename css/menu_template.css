@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #202F36;
+    height: 15vh;
+    border: 10px salmon solid;
+   
+    
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.acesso {
+    margin-right: 30px;
+    
+}
