@@ -1,0 +1,48 @@
+.rodape {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.rodape-top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    
+
+}
+
+.logo {
+    align-self: flex-end;
+    display: flex;
+    justify-content:flex-end;
+    //flex-grow: 2;
+    width: 50%;
+    background-color: aqua;
+
+}
+
+.social-list {
+    align-self: flex-end;
+    //flex-grow: 1;
+    background-color: aqua;
+    //width:20%;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+
+}
+
+.copyright p, span {
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+
+}
