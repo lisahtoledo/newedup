@@ -1,0 +1,117 @@
+.start { 
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+   // background-color: aqua;
+
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    //flex-grow: 2;
+    justify-content: space-around;
+    margin-left: 30px;
+}
+
+.home h1 {
+    font-weight: lighter;
+    font-size: 4rem;
+    color: #FFFFFF;
+
+}
+
+.home h1 span {
+    font-weight: bold;
+    font-size: 4rem;
+    color: #FCDE32;
+
+}
+
+.button-group {
+    display: flex;
+    
+
+}
+
+.button-aluno {
+    //width: 40%;
+    background-color:  #FCDE32;
+    border-radius: 5px;
+    padding: 20px 10px 20px 10px;
+    width: 200px;
+    margin-right: 30px;
+}
+
+.button-empresa {
+    //width: 40%;
+    background-color:  #419CA1;
+    border-radius: 5px;
+    padding: 20px 10px 20px 10px;
+    width: 200px;
+
+}
+
+.descer {
+    display: flex;
+    justify-content: center;
+  
+}
+
+.descer img { 
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #FCDE32;
+    width: 60px;
+    height: 60px;
+}
+
+.descer img:
+
+.illustration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    //flex-grow: 1;
+    width: 60%;
+
+}
+
+
+.illustration img {
+    height: 100%;
+
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+@media (max-width: 768px){
+    .illustration {
+        display: none;
+
+    }
+
+    .descer { 
+        display: none;
+
+    }
+
+
+
+
+
+
+}
