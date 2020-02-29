@@ -7,42 +7,78 @@
 .rodape-top {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 20vh;
+    height: 30vh;
+   
     
 
-}
-
-.logo {
-    align-self: flex-end;
-    display: flex;
-    justify-content:flex-end;
-    //flex-grow: 2;
-    width: 50%;
-    background-color: aqua;
-
-}
-
-.social-list {
-    align-self: flex-end;
-    //flex-grow: 1;
-    background-color: aqua;
-    //width:20%;
 }
 
 .copyright {
     display: flex;
     align-items: center;
     justify-content: center;
+   
     height: 10vh;
 
 }
+
+.info-footer {
+    display: flex;
+     flex-direction: row;
+     justify-content: space-between;    
+     width: 55%;
+     margin-left: auto;
+     
+ }
+
+.info-footer .logo {
+    margin: 10px;
+}
+
+
+.info-footer .icons {
+    display: flex;
+    align-items: flex-end;
+    
+
+}
+
+.info-footer .icons img {
+    width: 36px;
+    height: 36px;
+    margin: 10px;
+
+}
+
+
+
 
 .copyright p, span {
     text-align: center;
     color: #FFFFFF;
     font-weight: bold;
+
+}
+
+
+@media (max-width: 768px){
+    .info-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        
+
+    }
+
+
+
+
+
 
 }
