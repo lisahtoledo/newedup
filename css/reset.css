@@ -13,10 +13,11 @@
 
 }
 
+
 .bg-space {
     background-image: url(/img/background.svg);
-    background-repeat: no-repeat;
-    background-color: #202F36;
+  /*background-repeat: no-repeat;*/
+  background-color: #202F36;
     
 }
 
@@ -26,6 +27,9 @@
   
 }
 
+textarea {
+  resize: none;
+}
 
 
 
