@@ -2,7 +2,7 @@ module.exports = {
     getLoginPage: (req, res) => {
         console.log("Dentro da rota GET de login.");
         console.log(req.sessionID);
-        res.send("Você chegou na página de login!\n");
+        res.render("login.html");
     },
 
     postLoginUser: (req, res, next) => {

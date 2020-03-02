@@ -9,10 +9,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const mysql = require('mysql');
 const path = require('path');
 const nunjucks = require('nunjucks');
-
-/*const users = [
-    {id: '2f24vvg', email: 'test@test.com', password: 'password'}
-  ]*/
   
 // configuração da conexão com o banco de dados
 const dbconfig = require("./config/database");
@@ -33,6 +29,7 @@ global.passport = passport;
 passport.use(new LocalStrategy(
     {usernameField: 'email',
      passwordField: 'password'},
+     
     (email, password, done) => {
         console.log("Dentro do callback da estratégia local.");
         
@@ -53,12 +50,6 @@ passport.use(new LocalStrategy(
             return done(null, results[0]);
 
         });
-       
-        //const user = users[0];  
-        /*if(email === user.email && password === user.password){
-            console.log('Estratégia local retornou true');
-            return done(null, user);
-        }*/
     })
 );
 
@@ -76,12 +67,15 @@ passport.deserializeUser((id, done) => {
         return done(null, results[0]);
     })
 });
+
 // cria o servidor 
 const app = express();  
 
 // funções callback das rotas
 const {getHomePage} = require("./routes/index");
 const {getLoginPage, postLoginUser} = require("./routes/login");
+const {getAboutPage} = require("./routes/sobrenos");
+const {getCompanyProfile, getCompanyPannel} = require("./routes/company")
 
 // adiciona e configura middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -115,17 +109,22 @@ app.get('/login', getLoginPage);
 app.post('/login', postLoginUser);
 
 // cria a rota da página 'Sobre Nós'
-//app.get('/sobrenos', getAboutPage);
+app.get('/sobrenos', getAboutPage);
+
+// cria a rota da página 'Perfil Empresa'
+app.get('/perfilEmpresa', getCompanyProfile);
+app.get('/painelEmpresa:id', getCompanyPannel);
 
 app.get('/authRequired', (req, res) => {
     console.log("Dentro da rota GET de /authRequired");
     console.log(`Usuário autenticado? ${req.isAuthenticated()}`);
     if(req.isAuthenticated()) {
-        res.send("Você chegou no endpoint de autenticação!\n");
+        res.redirect('/painelEmpresa:' + req.user.id);
     } else {
         res.redirect('/');
     }
 })
+
 // diz para o servidor em que porta ouvir
 app.listen(3000, ()=>{
     console.log("Ouvindo na porta 3000");

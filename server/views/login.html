@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login EdUp</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body class="container bg-space">
+    
+    <figure class="logo-up">
+        <img src="img/logo_up.svg"/>
+    </figure>    
+    <form class="login" action="/login" method="POST">
+        <input type="email" name="email" placeholder="E-mail" required/>
+        <input type="password" name="password" placeholder="Senha" required/>
+        <div class="recovery">
+            <a href="#">Esqueci a senha</a>
+        </div>
+        <div class="tipo-usuario">
+            
+            <input type="radio" value="aluno" name="tipo-usuario"/>
+            <label>Aluno</label>
+            <input type="radio" value="aluno" name="tipo-usuario"/>
+            <label>Empresa</label>     
+        </div>
+        <input type="submit" value="Login"/>    
+        <div class="register">
+            <p>Ainda não faz parte ?</p>
+            <a href="#">Registre-se</a>
+        </div>
+    </form>
+    
+</body>
+</html>
