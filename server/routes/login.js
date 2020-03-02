@@ -5,7 +5,7 @@ module.exports = {
         res.send("Você chegou na página de login!\n");
     },
 
-    postLoginUser: (req, res, next, passport) => {
+    postLoginUser: (req, res, next) => {
         console.log("Dentro da rota POST de login.");
         passport.authenticate("local", (err, user, info) => {
             console.log("Dentro do callback de passport.authenticate");

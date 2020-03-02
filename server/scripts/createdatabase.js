@@ -20,7 +20,7 @@ rl.question("Digite seu usuário do MySql: ", (user) => {
                 console.log(err);
                 return err;
             } else {
-                console.log("Banco de Dados " + dbconfig.database + " criado com sucesso!\n");
+                console.log("Banco de Dados " + dbconfig.connection.database + " criado com sucesso!\n");
                 connection.query('\
                     CREATE TABLE ' + dbconfig.database + '.' + dbconfig.users_table + '( \
                         id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT, \

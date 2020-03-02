@@ -17,7 +17,7 @@ const path = require('path');
 const dbconfig = require("./config/database");
 
 // cria conexão com o banco de dados
-const conn = mysql.createConnection(dbconfig.connection );
+const conn = mysql.createConnection(dbconfig.connection);
 
 conn.connect((err) => {
     if(err) throw err;
