@@ -1,1 +1,5 @@
+<<<<<<< HEAD:server/sessions/1ae65eaf-2028-47cd-a95f-33fd65b1f475.json
 {"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"__lastAccess":1583136526376}
+=======
+{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"__lastAccess":1583128512772}
+>>>>>>> 4f87938ee7ce490a6e3df11ce0ad051dde511170:server/sessions/dc3afabf-4360-4d68-9fc6-8096ea9285b1.json

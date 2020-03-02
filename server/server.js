@@ -109,11 +109,13 @@ app.get('/login', getLoginPage);
 app.post('/login', postLoginUser);
 
 // cria a rota da página 'Sobre Nós'
+
 app.get('/sobrenos', getAboutPage);
 
 // cria a rota da página 'Perfil Empresa'
 app.get('/perfilEmpresa', getCompanyProfile);
 app.get('/painelEmpresa:id', getCompanyPannel);
+
 
 app.get('/authRequired', (req, res) => {
     console.log("Dentro da rota GET de /authRequired");
