@@ -8,6 +8,7 @@ const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
 const mysql = require('mysql');
 const path = require('path');
+const nunjucks = require('nunjucks');
 
 /*const users = [
     {id: '2f24vvg', email: 'test@test.com', password: 'password'}
@@ -98,6 +99,13 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static(path.join(__dirname, '/public')));
+
+// configuração do nunjucks
+nunjucks.configure(__dirname + '/views', {
+    autoescape: true,
+    express: app
+});
 
 // cria a rota para a homepage em '/'
 app.get('/', getHomePage); 
