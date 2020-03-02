@@ -40,7 +40,7 @@ passport.use(new LocalStrategy(
         
         // Query SQL para encontrar um usuário com o mesmo email providenciado.
         db.query('SELECT * FROM Users WHERE email = ?', [email], (err, results) =>{
-            if(err) return done(err); 
+            if(err) return done(err, false); 
 
             // testa se o usuário existe no BD
             if(!results.length) {
