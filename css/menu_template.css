@@ -4,7 +4,7 @@ header {
     //justify-content: space-around;
     align-items: center;
     background-color: #202F36;
-    height: 15vh;
+    height: 20vh;
     //border: 10px salmon solid;
     
     
@@ -68,6 +68,7 @@ header {
     background-color: #FCDE32;
     font-weight: bold;
     color: #202F36;
+    display: none;
 }
 
 .menu {
