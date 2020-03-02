@@ -23,7 +23,7 @@ header {
 .search {
     display: flex;
     flex-grow: 1;
-    background-color: purple;
+    //background-color: purple;
     border-radius: 10px;
 
 }
