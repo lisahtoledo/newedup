@@ -114,6 +114,9 @@ app.get('/', getHomePage);
 app.get('/login', getLoginPage);
 app.post('/login', postLoginUser);
 
+// cria a rota da página 'Sobre Nós'
+//app.get('/sobrenos', getAboutPage);
+
 app.get('/authRequired', (req, res) => {
     console.log("Dentro da rota GET de /authRequired");
     console.log(`Usuário autenticado? ${req.isAuthenticated()}`);
