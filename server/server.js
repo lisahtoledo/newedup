@@ -13,14 +13,11 @@ const path = require('path');
     {id: '2f24vvg', email: 'test@test.com', password: 'password'}
   ]*/
   
+// configuração da conexão com o banco de dados
+const dbconfig = require("./config/database");
 
 // cria conexão com o banco de dados
-const conn = mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: 'Theo2305!',
-      database: 'edup'
-  });
+const conn = mysql.createConnection(dbconfig.connection);
 
 conn.connect((err) => {
     if(err) throw err;
