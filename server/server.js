@@ -6,28 +6,63 @@ const FileStore = require("session-file-store")(session); //TO DO: Substituir po
 const bodyParser = require("body-parser"); 
 const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
+const mysql = require('mysql');
+const path = require('path');
 
-const users = [
+/*const users = [
     {id: '2f24vvg', email: 'test@test.com', password: 'password'}
-  ]
+  ]*/
+  
+
+// cria conexão com o banco de dados
+const conn = mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'Theo2305!',
+      database: 'edup'
+  });
+
+conn.connect((err) => {
+    if(err) throw err;
+    console.log("Conectando ao MySql..."); 
+});
+
+// escopo global
+global.db = conn;
+global.passport = passport;
 
 // configura passport.js para usar a estratégia local
 passport.use(new LocalStrategy(
-    {usernameField: 'email'},
+    {usernameField: 'email',
+     passwordField: 'password'},
     (email, password, done) => {
         console.log("Dentro do callback da estratégia local.");
         
-        // aqui é onde aconteceria a chamada para o BD para
-        // encontrar o usuário baseado no username ou endereço de email
-        // por hora, vamos fingir que encontramos e é igual a users[0].
+        // Query SQL para encontrar um usuário com o mesmo email providenciado.
+        db.query('SELECT * FROM Users WHERE email = ?', [email], (err, results) =>{
+            if(err) return done(err); 
+
+            // testa se o usuário existe no BD
+            if(!results.length) {
+                return done(null, false, {message: 'Usuário não encontrado.\n'});
+            }
+
+            // caso o usuário exista, mas a senha não corresponda
+            if(!(results[0].password === password)){
+                return done(null, false, {message: 'Senha incorreta!\n'});
+            }
+            
+            return done(null, results[0]);
+
+        });
        
-        const user = users[0];
-        if(email === user.email && password === user.password){
+        //const user = users[0];  
+        /*if(email === user.email && password === user.password){
             console.log('Estratégia local retornou true');
             return done(null, user);
-        }
-    }
-));
+        }*/
+    })
+);
 
 // diz para o passport serializar o usuário
 passport.serializeUser((user, done) =>{
@@ -38,14 +73,20 @@ passport.serializeUser((user, done) =>{
 passport.deserializeUser((id, done) => {
     console.log("Dentro da Callback de deserializeUser.");
     console.log(`A id de usuário que o passport salvou no arquivo de armazenamento de sessão é: ${id}`);
-    const user = users[0].id === id ? users[0] : false;
-    done(null, user);
+    const user = db.query("SELECT * FROM Users WHERE id = ?", [id], (err, results) => {
+        if(err) return done(err, false);
+        return done(null, results[0]);
+    })
 });
 // cria o servidor 
 const app = express();  
 
+// funções callback das rotas
+const {getHomePage} = require("./routes/index");
+const {getLoginPage, postLoginUser} = require("./routes/login");
+
 // adiciona e configura middleware
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(session({
     genid: (req) => {
@@ -62,33 +103,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // cria a rota para a homepage em '/'
-app.get('/', (req, res) => {
-    console.log("Dentro da função callback da homepage.");
-    console.log(req.sessionID);
-    res.send(`Você chegou na nossa home!\n`); 
-}); 
+app.get('/', getHomePage); 
 
 // cria as rotas de GET  e POST de login
-app.get('/login', (req, res) => {
-    console.log("Dentro da rota GET de login.");
-    console.log(req.sessionID);
-    res.send("Você chegou na página de login!\n");
-});
-
-app.post('/login', (req, res, next) => {
-    console.log("Dentro da rota POST de login.");
-    passport.authenticate("local", (err, user, info) => {
-        console.log("Dentro do callback de passport.authenticate");
-        console.log(`req.session.passport: ${JSON.stringify(req.session.passport)}`)
-        console.log(`req.user: ${JSON.stringify(req.user)}`)
-        req.login(user, (err)=>{
-            console.log('Dentro da callback de req.login()');
-            console.log(`req.session.passport: ${JSON.stringify(req.session.passport)}`)
-            console.log(`req.user: ${JSON.stringify(req.user)}`);
-            return res.send("Você foi autenticadx e logadx!\n");
-        });
-    }) (req, res, next);    
-});
+app.get('/login', getLoginPage);
+app.post('/login', postLoginUser);
 
 app.get('/authRequired', (req, res) => {
     console.log("Dentro da rota GET de /authRequired");
