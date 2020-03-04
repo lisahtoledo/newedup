@@ -75,7 +75,7 @@ const app = express();
 const {getHomePage} = require("./routes/index");
 const {getLoginPage, postLoginUser} = require("./routes/login");
 const {getAboutPage} = require("./routes/sobrenos");
-const {getCompanyProfile, getCompanyPannel} = require("./routes/company")
+const {getCompanyProfile, getCompanyPannel, getNewCourseForm} = require("./routes/company")
 
 // adiciona e configura middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -115,7 +115,7 @@ app.get('/sobrenos', getAboutPage);
 // cria a rota da página 'Perfil Empresa'
 app.get('/perfilEmpresa', getCompanyProfile);
 app.get('/painelEmpresa:id', getCompanyPannel);
-
+app.get('/cadastroCurso', getNewCourseForm);
 
 app.get('/authRequired', (req, res) => {
     console.log("Dentro da rota GET de /authRequired");

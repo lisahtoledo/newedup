@@ -16,5 +16,9 @@ module.exports = {
         
         console.log(req); 
         
+    },
+
+    getNewCourseForm: (req, res) => {
+        res.render('novoCurso.html');
     }
 }
