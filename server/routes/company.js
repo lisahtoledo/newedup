@@ -19,10 +19,6 @@ module.exports = {
         
     },
 
-    getNewCourseForm: (req, res) => {
-        res.render('novoCurso.html');
-    },
-
     getNewCompanyForm: (req, res) => {
         res.render('formEmpresa.html');
     }, 

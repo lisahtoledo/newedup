@@ -11,3 +11,4 @@
 2. Na pasta _server/_ rode o comando:
         
     `$ npm run dev:server`
+3. O projeto estará rodando em localhost:3000

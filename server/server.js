@@ -75,10 +75,10 @@ const app = express();
 const {getHomePage} = require("./routes/index");
 const {getLoginPage, postLoginUser} = require("./routes/login");
 const {getAboutPage} = require("./routes/sobrenos");
-const {getCompanyProfile, getCompanyPannel, 
-        getNewCourseForm, 
+const {getCompanyProfile, getCompanyPannel,  
         getNewCompanyForm, postNewCompany} = require("./routes/company");
 const {getNewStudentForm, postNewStudent} = require("./routes/student");
+const {getNewCourseForm} = require("./routes/course");
 
 // adiciona e configura middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -127,7 +127,9 @@ app.get('/painelEmpresa:id', getCompanyPannel);
 app.get('/cadastroEmpresa', getNewCompanyForm);
 app.post('/cadastroEmpresa', postNewCompany); 
 
+// cria a rota para cadastro de cursos
 app.get('/cadastroCurso', getNewCourseForm);
+
 
 app.get('/authRequired', (req, res) => {
     console.log("Dentro da rota GET de /authRequired");
