@@ -52,13 +52,13 @@
             </div>
         </div>
     </section>
-    <form class="container" action="" method="POST">
+    <form class="container" action="/cadastroEmpresa" method="POST">
       <section class="cadastro">
         <div class="titulo">
             <h2>1. Autenticação</h2>
         </div>
     <div class="input-group">
-      <input type="email" name="email" placeholder="E-mail" required/>
+      <input type="email" name="emailEmp" placeholder="E-mail" required/>
       <input type="email" name="cemail" placeholder="Confirmação de E-mail" required/>
         <div class="input-p">
             <input type="password" name="senha" placeholder="Senha" required/>
@@ -77,9 +77,9 @@
     <input type="text" name="nomeEmpresa" placeholder="Nome da Empresa" required/>
   <div class="input-p">
     <input type="text" name="cnpj" placeholder="CNPJ" required/>
-    <select id="paisSede" name="paisSede" required>
+    <select id="paisSede" name="paisSede" required default="Brasil">
     <option value="">Option</option>
-    <option value="">Option</option>
+    <option value="">Brasil</option>
     <option value="">Option</option>
     
   </select>
@@ -116,12 +116,12 @@
       <h2>4. Dados do representante</h2>
   </div>
   <div class="input-group">
-    <input class="g" type="text" name="nome" placeholder="Nome" required/>
+    <input class="g" type="text" name="nomeRep" placeholder="Nome" required/>
     <div class="input-p">
       <input class="g" type="text" name="cpf" placeholder="CPF" required/>
       <input class="g" type="text" name="telefone" placeholder="Telefone" required/>
     </div> 
-    <input class="g" type="email" name="email" placeholder="E-mail" required/>
+    <input class="g" type="email" name="emailRep" placeholder="E-mail" required/>
     <div class="input-btn">
       <input type="submit" name="" value="Finalizar cadastro"/>
     </div>
