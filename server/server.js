@@ -137,7 +137,12 @@ app.get('/authRequired', (req, res) => {
     } else {
         res.redirect('/');
     }
-})
+});
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+  });
 
 // diz para o servidor em que porta ouvir
 app.listen(3000, ()=>{

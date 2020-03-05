@@ -63,10 +63,10 @@ module.exports = {
                         if(err) return res.status(500).send(err);
                         console.log("Empresa cadastrada: ", req.body.nomeEmpresa);
                         res.redirect('/login');
-                    })
-                })
-            })
-        })
+                    });
+                });
+            });
+        });
     }
 
     
