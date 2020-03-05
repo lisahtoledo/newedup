@@ -10,4 +10,4 @@
 1. Adicione suas credenciais do MySql nos campos **user** e **password** do arquivo _config/database.js_
 2. Na pasta _server/_ rode o comando:
         
-    `$ node dev:server`
+    `$ npm run dev:server`
