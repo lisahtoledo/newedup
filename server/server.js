@@ -75,7 +75,10 @@ const app = express();
 const {getHomePage} = require("./routes/index");
 const {getLoginPage, postLoginUser} = require("./routes/login");
 const {getAboutPage} = require("./routes/sobrenos");
-const {getCompanyProfile, getCompanyPannel, getNewCourseForm} = require("./routes/company")
+const {getCompanyProfile, getCompanyPannel, 
+        getNewCourseForm, 
+        getNewCompanyForm, postNewCompany} = require("./routes/company");
+const {getNewStudentForm, postNewStudent} = require("./routes/student");
 
 // adiciona e configura middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -112,9 +115,18 @@ app.post('/login', postLoginUser);
 
 app.get('/sobrenos', getAboutPage);
 
+// cria a rota para cadastro de novos alunos
+app.get('/cadastroAluno', getNewStudentForm);
+app.post('/cadastroAluno', postNewStudent);
+
 // cria a rota da página 'Perfil Empresa'
 app.get('/perfilEmpresa', getCompanyProfile);
 app.get('/painelEmpresa:id', getCompanyPannel);
+
+// cria a rota para cadastro de empresas
+app.get('/cadastroEmpresa', getNewCompanyForm);
+app.post('/cadastroEmpresa', postNewCompany); 
+
 app.get('/cadastroCurso', getNewCourseForm);
 
 app.get('/authRequired', (req, res) => {

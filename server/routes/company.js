@@ -10,7 +10,8 @@ module.exports = {
         db.query('SELECT nome FROM Empresas where usr_id=?', [req.user.id], (err, results) => {
             if(err) res.status(500).send(err);
             
-            req.user.name = results[0].nome; 
+            req.user.company = results[0]; 
+            console.log (results);  
             res.render("crudEmpresa.njk", {user: req.user});
         })
         
@@ -20,5 +21,16 @@ module.exports = {
 
     getNewCourseForm: (req, res) => {
         res.render('novoCurso.html');
+    },
+
+    getNewCompanyForm: (req, res) => {
+        res.render('formEmpresa.html');
+    }, 
+
+    postNewCompany: (req,res) => {
+        console.log("Tentando cadastrar nova empresa.\n");
+
     }
+
+    
 }
