@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/ebb5760a-36b5-4f28-bb05-42108c3149f6/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/EdUP",
+    "appService.deploySubpath": ""
+}
