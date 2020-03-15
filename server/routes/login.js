@@ -1,7 +1,7 @@
 module.exports = {
     getLoginPage: (req, res) => {
         console.log("Dentro da rota GET de login.");
-        console.log(req.sessionID);
+        //console.log(req.sessionID);
         res.render("login.html");
     },
 
@@ -14,7 +14,7 @@ module.exports = {
             if(!user) return res.redirect('/login');
             req.login(user, (err)=>{
                 console.log('Dentro da callback de req.login()');
-                console.log(`req.session.passport: ${JSON.stringify(req.session.passport)}`)
+                //console.log(`req.session.passport: ${JSON.stringify(req.session.passport)}`)
                 console.log(`req.user: ${JSON.stringify(req.user)}`);
                 if(err) return next(err);
                 return res.redirect('/authRequired');

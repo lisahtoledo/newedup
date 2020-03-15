@@ -78,7 +78,7 @@ const {getAboutPage} = require("./routes/sobrenos");
 const {getCompanyProfile, getCompanyPannel,  
         getNewCompanyForm, postNewCompany} = require("./routes/company");
 const {getNewStudentForm, postNewStudent} = require("./routes/student");
-const {getNewCourseForm} = require("./routes/course");
+const {getNewCourseForm, postNewCourse} = require("./routes/course");
 
 // adiciona e configura middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -129,6 +129,7 @@ app.post('/cadastroEmpresa', postNewCompany);
 
 // cria a rota para cadastro de cursos
 app.get('/cadastroCurso', getNewCourseForm);
+app.post('/cadastroCurso', postNewCourse); 
 
 
 app.get('/authRequired', (req, res) => {

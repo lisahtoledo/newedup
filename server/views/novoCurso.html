@@ -17,22 +17,22 @@
         </div>
    
     <div class="input-group">
-      <input type="text" name="" placeholder="Nome do curso" class="long"/>      
+      <input type="text" name="name" placeholder="Nome do curso" class="long"/>      
         <div class="input-p">
-            <input type="number" name="" placeholder="Carga horária" class="long"/>
-            <input type="Date" name="" placeholder="Prazo de inscrição" class="long"/>
+            <input type="number" name="carga_horaria" placeholder="Carga horária" class="long"/>
+            <input type="Date" name="prazo" placeholder="Prazo de inscrição" class="long"/>
         </div>   
         <div class="input-p">
-          <input type="text" name="" placeholder="Área do curso" class="long"/>
-          <input type="text" name="" placeholder="Tipo de curso" class="long"/>
+          <input type="text" name="area" placeholder="Área do curso" class="long"/>
+          <input type="text" name="tipo" placeholder="Tipo de curso" class="long"/>
       </div>  
       
         <div class="input-group-title"> 
           <h6>Duração</h6>
         </div>
         <div class="input-p">
-        <input type="date" name="" />
-        <input type="date" name="" />
+        <input type="date" name="data_de_inicio" />
+        <input type="date" name="data_de_termino" />
         </div> 
         <div class="input-group-title"> 
           <h6>Frequência</h6>
@@ -52,7 +52,7 @@
           <input type="checkbox" id="dia3" name="quarta" value="Quarta">
            Quarta</label>
            <label for="dia4">
-            <input type="checkbox" id="dia4" name="quainta" value="Quinta">
+            <input type="checkbox" id="dia4" name="quinta" value="Quinta">
              Quinta</label>
              <label for="dia5">
               <input type="checkbox" id="dia5" name="sexta" value="Sexta">
@@ -84,9 +84,9 @@
                 <h6>Faixa Etária</h6>
               </div>
               <div class="input-p">
-                <input class="p" type="number" name="" placeholder="De"/>
-                <input class="p" type="number" name="" placeholder="Até"/>
-                <input type="number" name="" placeholder="Número de vagas"/>
+                <input class="p" type="number" name="idade_min" placeholder="De"/>
+                <input class="p" type="number" name="idade_max" placeholder="Até"/>
+                <input type="number" name="vagas" placeholder="Número de vagas"/>
                 </div>
                 <div class="input-group-title"> 
                   <h6>Selecione o público alvo em ordem de preferência:</h6>
@@ -167,14 +167,14 @@
                         <h6>Onde o curso ocorrerá?</h6>
                       </div>
                       <div class="input-p">
-                        <input type="text" name="" placeholder="CEP"/>
-                        <input type="text" name="" placeholder="Cidade"/>
+                        <input type="text" name="cep" placeholder="CEP"/>
+                        <input type="text" name="cidade" placeholder="Cidade"/>
                         </div>
                         <div class="input-p">
-                          <input type="text" name="" placeholder="Estado"/>
-                          <input type="number" name="" placeholder="Número"/>
+                          <input type="text" name="estado" placeholder="Estado"/>
+                          <input type="number" name="numero" placeholder="Número"/>
                           </div>
-                          <input type="text" name="" placeholder="Complemento"/>      
+                          <input type="text" name="complemento" placeholder="Complemento"/>      
                       <div class="input-btn">
           <input type="submit" name="" value="Criar"/>
         </div>
