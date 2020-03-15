@@ -21,10 +21,10 @@ var conn = mysql.createPool({
     database: dbconfig.database
 });
 
-conn.connect((err) => {
+/*conn.connect((err) => {
     if(err) throw err;
     console.log("Conectando ao MySql..."); 
-});
+});*/
 
 // escopo global
 global.db = conn;
