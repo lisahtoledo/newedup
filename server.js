@@ -14,7 +14,12 @@ const nunjucks = require('nunjucks');
 const dbconfig = require("./config/database");
 
 // cria conexão com o banco de dados
-const conn = mysql.createConnection(dbconfig.connection);
+var conn = mysql.createPool({
+    host: dbconfig.host,
+    user: dbconfig.user,
+    password: dbconfig.password,
+    database: dbconfig.database
+});
 
 conn.connect((err) => {
     if(err) throw err;
