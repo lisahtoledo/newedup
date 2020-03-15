@@ -148,6 +148,6 @@ app.get('/logout', (req, res) => {
   });
 
 // diz para o servidor em que porta ouvir
-app.listen(3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log("Ouvindo na porta 3000");
 }); 
