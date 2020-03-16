@@ -80,6 +80,7 @@ const app = express();
 const {getHomePage} = require("./routes/index");
 const {getLoginPage, postLoginUser} = require("./routes/login");
 const {getAboutPage} = require("./routes/sobrenos");
+const {getCoursesPage} = require("./routes/pagina_cursos");
 const {getCompanyProfile, getCompanyPannel,  
         getNewCompanyForm, postNewCompany} = require("./routes/company");
 const {getNewStudentForm, postNewStudent} = require("./routes/student");
@@ -119,6 +120,10 @@ app.post('/login', postLoginUser);
 // cria a rota da página 'Sobre Nós'
 
 app.get('/sobrenos', getAboutPage);
+
+// cria a rota da página 'Página Cursos'
+
+app.get('/cursos', getCoursesPage);
 
 // cria a rota para cadastro de novos alunos
 app.get('/cadastroAluno', getNewStudentForm);
