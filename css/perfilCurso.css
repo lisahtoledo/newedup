@@ -1,0 +1,70 @@
+.perfil-curso {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.perfil-curso .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #C4C4C4;   
+    height: 40vh;
+  
+
+
+}
+
+.perfil-curso .top .info {
+    display: flex;
+    align-items: center;
+   
+    width: 100%;
+    height: 30%;
+   // background-color: #000000;
+
+
+}
+
+
+.perfil-curso .top .info div {
+    display: flex;
+    width: 50%;
+    
+    justify-content: space-around;
+    
+}
+
+
+.perfil-curso .top .info div h2 {
+
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+.perfil-curso .top .info div h2 span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+}
+
+.perfil-curso .top .btn {
+    display: flex;
+    background-color: purple;
+    justify-content: flex-end;
+    
+    width: 50%;
+}
+
+.perfil-curso .top .btn button {
+    
+    background-color: #FCDE32;
+    border-radius: 5px;
+    padding: 20px 10px 20px 10px;
+    width: 200px;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
