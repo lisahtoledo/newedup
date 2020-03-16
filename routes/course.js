@@ -1,8 +1,7 @@
 module.exports = {
     getNewCourseForm: (req, res) => {
-        
-        
-        if(req.isAuthenticated() && req.user.body.type == 'company')
+        console.log(req.body.user);
+        if(req.isAuthenticated() && req.user.type == 'company')
             res.render('novoCurso.html');
         else
             res.status(403).send("Você não tem permissão para acessar essa página!\n");
