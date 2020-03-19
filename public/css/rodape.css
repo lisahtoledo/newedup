@@ -6,7 +6,7 @@
     height: 20vh;
 }
 
-.rodape .logo {
+.rodape .logor {
     margin-left: 30px;
 }
 
@@ -54,7 +54,7 @@
         height: auto;
     }
 
-    .rodape .logo, .copyright, .rodape .social-icons   {
+    .rodape .logor, .copyright, .rodape .social-icons   {
         margin: 10px;
     }
 

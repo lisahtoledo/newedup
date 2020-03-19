@@ -20,21 +20,17 @@
         <form class="search">
             <input type="search" placeholder="Buscar" name="pesquisar"/>
             <button></button>
-        </form>
+        </form>    
         <nav class="menu">
-                <a href="javascript:void(0);" class="hamburguer" id="jsNavbarToggle" onclick="mostrarMenu()">
-                        <i class="fa fa-bars fa-2x"></i>
-                      </a>
-                      <a class="active">Menu</a>
-            <ul class="menu-list" id="jsmenu">
             
-            <li><a href="/">Home</a></li>
-            <li><a href="/cursos">Cursos</a></li>
-            <li><a href="/sobrenos">Sobre</a></li>
-        </ul>
+            
+            <a href="#">Home</a>
+            <a href="#">Cursos</a>
+            <a href="#">Sobre</a>
         </nav>
+
         <section class="acesso">
-            <a href="/login" class="sigin">Login</a>
+            <a href="/login.html" class="signin">Login</a>
             <button class="signup">Cadastre-se</button>
         </section>
     </header>
@@ -44,8 +40,8 @@
             <h1>Inicie sua jornada <span>conosco.</span></h1>
             </div>
             <div class="button-group">
-                <a class="button-aluno" href="/cadastroAluno">Aluno</a>
-                <a class="button-empresa" href="/cadastroEmpresa">Empresa</a>
+                <a class="button-aluno" href="/formAluno.html"><span>Aluno</span></a>
+                <a class="button-empresa" href="/formEmpresa.html"><span>Empresa</span></a>
             </div>
             <figure class="descer"><a href="#how"><img src="./img/down.svg" alt="Ir para baixo"/></a>   </figure>
         </section>
@@ -61,7 +57,7 @@
                 <div class="circle">
                     <img src="/img/step1.svg" alt="Icon"/>
                 </div>
-                <p>1.<a href="/cadastroAluno">Cadastre-se</a></p>    
+                <p>1.<a href="/formAluno.html">Cadastre-se</a></p>    
             </div>
             <figure class="right-arrow">
                 <img src="/img/arrow_right.svg" alt="Próximo"/>
@@ -70,7 +66,7 @@
                 <div class="circle">
                     <img src="/img/step2.svg" alt="Icon"/>
                 </div>
-                <p>2.<a href="/cursos">Escolha</a> um curso</p>    
+                <p>2.<a href="/cursos.html">Escolha</a> um curso</p>    
             </div>
             <figure class="right-arrow">
                 <img src="/img/arrow_right.svg" alt="Próximo"/>
@@ -119,22 +115,22 @@
             </div>
             
         </div>
-        <a href="/cursos"><button class="btn-link">Ver mais</button></a>
+        <a href="/cursos.html"><button class="btn-link">Ver mais</button></a>
    </section>
    
    <footer class="rodape bg-space">
-    <figure class="logo">
+    <figure class="logor">   
         <img src="./img/edup.svg" alt="Logo"/>
     </figure>
     <div class="copyright">
         <p><span>©</span> EdUp 2020 Todos os direitos reservados.</p>
     </div>
     <figure class="social-icons">   
-        <img src="./img/face.svg" alt="Social">
-        <img src="./img/twitter.svg" alt="Social">
-        <img src="./img/in.svg" alt="Social">
+        <a href="https://www.facebook.com/plataformaedup/"> <img src="./img/face.svg" alt="Social"> </a>
+        <a  href="https://instagram.com/plataformaedup" > <img src="./img/insta.svg"alt="Social"> </a>
+        <!--<img src="./img/in.svg" href="" alt="Social">-->
     </figure>
-</footer>
-   <script src="js/menu.js"></script>
+    </footer>
+   <script src="/js/menu.js"></script>
 </body>
 </html>

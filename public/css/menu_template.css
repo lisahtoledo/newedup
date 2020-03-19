@@ -4,7 +4,7 @@ header {
     //justify-content: space-around;
     align-items: center;
     background-color: #202F36;
-    height: 15vh;
+    height: 20vh;
     //border: 10px salmon solid;
     
     
@@ -23,8 +23,8 @@ header {
 .search {
     display: flex;
     flex-grow: 1;
-    background-color: purple;
-    border-radius: 10px;
+    //background-color: purple;
+
 
 }
 
@@ -35,6 +35,7 @@ header {
     font-size: 1rem;
     background-color: #1C596E;
     color: #FFFFFF;
+    border-radius: 5px;
 
 }
 
@@ -52,7 +53,7 @@ header {
 
 }
 
-.sigin { 
+.signin { 
     height: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -68,6 +69,7 @@ header {
     background-color: #FCDE32;
     font-weight: bold;
     color: #202F36;
+    display: none;
 }
 
 .menu {
@@ -90,7 +92,7 @@ header {
 
     }
 
-    .sigin { 
+    .signin { 
         height: 100%;
         padding: 10px 20px;
         border-radius: 5px;
