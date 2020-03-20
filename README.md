@@ -1,4 +1,4 @@
-<h1>newEdUP</h1>
+<h1>newEdUP!</h1>
 
 • Figma com o design do site:
 https://www.figma.com/file/AhzlvybY0NiRLlwPDXzLTS/EdUp-3.0
